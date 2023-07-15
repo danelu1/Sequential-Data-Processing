@@ -256,12 +256,18 @@ void task4(Node **list, int k)
 
             int timestamp = node->timestamp + 200;
 
-            while (timestamp <= node->next->timestamp)
+            while (timestamp <= right->timestamp)
             {
                 double data = generate_data(left, right, timestamp, k);
-                if (timestamp == node->next->timestamp)
+
+                if (timestamp == right->timestamp)
                 {
-                    push(&temp, node->next->data, node->next->timestamp);
+                    push(&temp, right->data, right->timestamp);
+                }
+                else if (right->timestamp - timestamp < 200)
+                {
+                    push(&temp, data, timestamp);
+                    push(&temp, right->data, right->timestamp);
                 }
                 else
                 {
@@ -280,9 +286,9 @@ void task4(Node **list, int k)
         q--;
     }
 
-    while (node)
+    while (node->next)
     {
-        push(&temp, node->data, node->timestamp);
+        push(&temp, node->next->data, node->next->timestamp);
         node = node->next;
     }
 

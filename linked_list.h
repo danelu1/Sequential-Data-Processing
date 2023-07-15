@@ -190,7 +190,6 @@ double scaling_factor(Node *left, Node *right, int timestamp)
     }
 
     double C = ((double)timestamp - (double)node1->timestamp) / (node2->timestamp - node1->timestamp);
-    // printf("%.02lf\n", C);
 
     return C;
 }
@@ -232,7 +231,7 @@ double generate_data(Node *left, Node *right, int timestamp, int k)
     for (int i = 0; i < k; i++)
     {
         sum_left += node1->data * w[i];
-        sum_right += node2->data * w[i];
+        sum_right += node2->data * w[k - i - 1];
         node1 = node1->next;
         node2 = node2->next;
     }
