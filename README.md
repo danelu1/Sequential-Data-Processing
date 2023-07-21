@@ -8,4 +8,4 @@ The code can be run by executing:
 -> "--e3";
 -> "--u";
 -> "--c";
--> "--st"<delta>.
+-> "--st"<delta>, where delta is an "int".
