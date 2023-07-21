@@ -8,4 +8,4 @@ The code can be run by executing:
 -> "--e3", for data correction using the mean value of the segmented sample;
 -> "--u", for data uniformization;
 -> "--c", for data completion;
--> "--st"<delta>(where delta is an "int"), for finding out data frequency on intervals of the form [p*delta, (p+1)*delta], with "p" a whole number.
+-> "--st<delta>"(where delta is an "int"), for finding out data frequency on intervals of the form [p*delta, (p+1)*delta], with "p" a whole number.
